@@ -10,7 +10,7 @@ using std::string;
   'z' and any ASCII characters are allowed.
 */
 int Password::count_leading_characters(string phrase){
-  int repetition = 1;
+  int repetition = 0;
   int index = 0;
   while( index < phrase.length()-1 && phrase[index] == phrase[index+1] ){
     repetition++;
@@ -18,3 +18,5 @@ int Password::count_leading_characters(string phrase){
   }
   return repetition;
 }
+
+
