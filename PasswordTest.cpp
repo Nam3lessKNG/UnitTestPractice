@@ -83,5 +83,12 @@ TEST(PasswordTest, valid_password)
 	Password my_password;
 	my_password.set("DDigimon");
 	bool actual = my_password.authenticate("DDigimon");
-	ASSERT_EQ(false, actual);
+	ASSERT_EQ(true, actual);
+}
+
+TEST(PasswordTest, default_password)
+{
+	Password my_password;
+	bool actual = my_password.authenticate("ChicoCA-95929");
+	ASSERT_EQ(true, actual);
 }

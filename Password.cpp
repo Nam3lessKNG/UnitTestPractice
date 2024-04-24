@@ -20,16 +20,21 @@ int Password::count_leading_characters(string phrase){
 }
 
 bool Password::has_mixed_case(string phrase){
+  if(phrase.empty()){
+    return false;
+  }
+  
   int index = 0;
   bool upper = false;
   bool lower = false;
-  while( index < phrase.length()-1 ){
+  while( index < phrase.length() ){
     if(phrase[index] >= 'A' && phrase[index] <= 'Z'){
       upper = true;
     }
     else if(phrase[index] >= 'a' && phrase[index] <= 'z'){
       lower = true;
     }
+    index++;
   }
 
   if(upper && lower){
